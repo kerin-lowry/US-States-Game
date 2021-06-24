@@ -55,10 +55,11 @@ while game_on == True:
 
 
 #states to learn csv
-states_to_learn_list = []
-for state in all_states:
-    if state not in guesses:
-        states_to_learn_list.append(state)
+# states_to_learn_list = []
+# for state in all_states:
+#     if state not in guesses:
+#         states_to_learn_list.append(state)
+states_to_learn_list = [state for state in all_states if (state not in guesses)]
 
 df = pandas.DataFrame(states_to_learn_list)
 df.to_csv("states_to_learn.csv")
